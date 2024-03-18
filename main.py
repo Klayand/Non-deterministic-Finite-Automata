@@ -1,4 +1,5 @@
 # @Author : Zikai Zhou
+# SPDX-License-Identifier: GPL-3.0-only
 
 import argparse
 from utils import *

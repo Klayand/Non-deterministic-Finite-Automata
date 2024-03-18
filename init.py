@@ -1,3 +1,6 @@
+# @Author : Zikai Zhou
+# SPDX-License-Identifier: GPL-3.0-only
+
 import graphviz
 from graphviz import Digraph
 from collections import deque

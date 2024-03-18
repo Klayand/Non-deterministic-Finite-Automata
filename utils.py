@@ -1,3 +1,6 @@
+# @Author : Zikai Zhou
+# SPDX-License-Identifier: GPL-3.0-only
+
 from collections import deque
 from init import DFA
 
