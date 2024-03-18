@@ -10,7 +10,7 @@ $ ./main.py --arguements
 根据 NFA/ENFA 生成其对应 DFA 的状态转移图
 
 optional arguments:
-  --file-path,   输入的NF/ENFA的状态表(用 $ 表示 \eplision)
+  --file-path,   输入的NFA/ENFA的状态表(用 $ 表示 \eplision)
   --output-path, 输出的图片以及文件的保存地址
   --mode,        选择 NFA-->DFA 或者 ENFA-->DFA
   --plot         是否使用 graphviz 绘画图片
