@@ -6,6 +6,7 @@ from utils import *
 from init import *
 
 
+# This is the main function, defining the whole processing process.
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--file-path', type=str, default='./inputs/example5.txt')

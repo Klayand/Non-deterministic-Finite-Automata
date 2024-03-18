@@ -7,15 +7,22 @@ from collections import deque
 
 
 class NFA:
+    """
+        This class is for the Non-deterministic Finite Automata
+    """
     def __init__(self, start_state, final_states, states, alphabet, transitions, par):
-        self.states = states
-        self.alphabet = alphabet
-        self.transitions = transitions
-        self.start_state = start_state
-        self.final_states = final_states
+        self.states = states  # Set of states of the NFA
+        self.alphabet = alphabet  # Alphabet of the NFA
+        self.transitions = transitions  # Transition function of the NFA
+        self.start_state = start_state  # Start state of the NFA
+        self.final_states = final_states  # Set of final states of the NFA
         self.par = par
 
     def print_nfa_table(self):
+        """
+
+        :return: NFA object state table
+        """
         print("State\t\t", end="")
         for symbol in self.alphabet:
             print(symbol + "\t\t", end="")
@@ -29,6 +36,10 @@ class NFA:
             print()
 
     def visualize(self):
+        """
+        Using Graphviz to visualize the NFA object
+        :return:
+        """
         # create Graphviz object
         graph = graphviz.Digraph(format='png')
 
@@ -51,21 +62,30 @@ class NFA:
 
 
 class ENFA:
+    """
+        This is the class for ENFA object.
+    """
     def __init__(self, start_state, final_states, states, alphabet, transitions, par):
-        self.states = states
-        self.alphabet = alphabet
-        self.transitions = transitions
-        self.start_state = start_state
-        self.final_states = final_states
+        self.states = states  # Set of states of the NFA
+        self.alphabet = alphabet  # Alphabet of the NFA
+        self.transitions = transitions  # Transition function of the NFA
+        self.start_state = start_state  # Start state of the NFA
+        self.final_states = final_states  # Set of final states of the NFA
         self.par = par
 
     def epsilon_closure(self, states):
+        """
+        Perform epsilon closure operation using a queue
+        :param states:
+        :return:
+        """
         closure = set(states)
         queue = deque(states)
 
         while queue:
             current_state = queue.popleft()
 
+            # Get epsilon transitions for the current state
             epsilon_moves = self.transitions.get((current_state, None), set())
             for next_state in epsilon_moves:
                 if next_state not in closure:
@@ -77,6 +97,7 @@ class ENFA:
     def move(self, states, symbol):
         next_states = set()
 
+        # Get the next states based on the current states and input symbol
         for state in states:
             transitions = self.transitions.get((state, symbol), set())
             next_states.update(transitions)
@@ -84,9 +105,14 @@ class ENFA:
         return next_states
 
     def has_accepting_state(self, states):
+        # Check if any of the input states are accepting states
         return bool(states.intersection(self.final_states))
 
     def print_enfa_table(self):
+        """
+        Print the ENFA state table
+        :return:
+        """
         print("State\t\t", end="")
         for symbol in self.alphabet:
             print(symbol + "\t\t", end="")
@@ -101,6 +127,10 @@ class ENFA:
             print(str(epsilon_moves) + "\t\t")
 
     def visualize(self):
+        """
+        Using Graphviz to visualize the ENFA table
+        :return:
+        """
         dot = Digraph(comment='ENFA')
 
         for state in self.states:
@@ -134,7 +164,10 @@ class DFA:
         self.par = par
 
     def print_dfa_table(self):
-        # 打印DFA的状态表头
+        """
+        Print DFA state table
+        :return:
+        """
         header = "State\t|\t"
         for symbol in self.alphabet:
             header += symbol + "\t|\t"
@@ -152,6 +185,10 @@ class DFA:
             print(row)
 
     def visualize(self):
+        """
+        Using Graphviz to visualize the DFA state table
+        :return:
+        """
         # create Graphviz object
         graph = graphviz.Digraph(format='png')
 
