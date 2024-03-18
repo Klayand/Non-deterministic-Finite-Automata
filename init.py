@@ -155,9 +155,9 @@ class DFA:
         # add DFA state node
         for state in self.states:
             if state in self.final_states:
-                graph.node(str(state)[9:-1], shape='doublecircle')
+                graph.node(str(state), shape='doublecircle')
             else:
-                graph.node(str(state)[9:-1])
+                graph.node(str(state))
 
         # add DFA transition edge
         for transition, next_state in self.transitions.items():

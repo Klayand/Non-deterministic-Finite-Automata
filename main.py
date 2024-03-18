@@ -7,9 +7,9 @@ from init import *
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file-path', type=str, default='./inputs/example1.txt')
+    parser.add_argument('--file-path', type=str, default='./inputs/example5.txt')
     parser.add_argument('--output-path', type=str, default='./saves')
-    parser.add_argument('--mode', type=str, default='nfa',
+    parser.add_argument('--mode', type=str, default='enfa',
                         help='choose nfa2dfa or enfa2dfa')  # $ represents \eplison
     parser.add_argument('--plot', type=bool, default=True)
 

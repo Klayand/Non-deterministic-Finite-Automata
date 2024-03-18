@@ -1,0 +1,20 @@
+digraph {
+	"frozenset({'q0'})"
+	"frozenset({'q4'})" [shape=doublecircle]
+	"frozenset({'q2', 'q1'})"
+	"frozenset()"
+	"frozenset({'q3', 'q0'})"
+	"frozenset({'q4', 'q0'})" [shape=doublecircle]
+	"frozenset({'q0'})" -> "frozenset({'q4'})" [label=b]
+	"frozenset({'q0'})" -> "frozenset({'q2', 'q1'})" [label=a]
+	"frozenset({'q4'})" -> "frozenset()" [label=b]
+	"frozenset({'q4'})" -> "frozenset()" [label=a]
+	"frozenset({'q2', 'q1'})" -> "frozenset()" [label=b]
+	"frozenset({'q2', 'q1'})" -> "frozenset({'q3', 'q0'})" [label=a]
+	"frozenset()" -> "frozenset()" [label=b]
+	"frozenset()" -> "frozenset()" [label=a]
+	"frozenset({'q3', 'q0'})" -> "frozenset({'q4', 'q0'})" [label=b]
+	"frozenset({'q3', 'q0'})" -> "frozenset({'q2', 'q1'})" [label=a]
+	"frozenset({'q4', 'q0'})" -> "frozenset({'q4'})" [label=b]
+	"frozenset({'q4', 'q0'})" -> "frozenset({'q2', 'q1'})" [label=a]
+}
