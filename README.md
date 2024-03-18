@@ -26,6 +26,6 @@ $ ./main.py  --mode nfa --file-path ./inputs/example1.txt
 ```
 $ ./main.py  --mode enfa --file-path ./inputs/example5.txt
 ```
-![ENFA](./saves/ENFA_example5.pdf)
+![ENFA](./saves/ENFA_examples5.png)
 ![DFA](./saves/DFA_example5.png)
 
